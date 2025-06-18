@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XCheck - 登录 / 注册</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/errorAlert.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .form-label {
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    .form-control {
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .toggle-btn {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #007bff;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .toggle-btn:hover {
+      text-decoration: underline;
+    }
+
+    .form-section {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="errorContainer" class="error-container"></div>
+
+  <div class="logo">XCheck</div>
+
+  <div class="form-section">
+   
+    <div class="mb-2 d-none" id="nameGroup">
+      <label for="nickname" class="form-label">用户名</label>
+      <input type="text" class="form-control" id="name" placeholder="请输入用户名" />
+    </div>
+
+    
+    <div class="mb-2">
+      <label for="username" class="form-label">学号</label>
+      <input type="number" class="form-control" id="user-ID" placeholder="请输入学号" />
+    </div>
+
+
+    <div class="mb-3">
+      <label for="password" class="form-label">密码</label>
+      <input type="password" class="form-control" id="password" placeholder="请输入密码" />
+    </div>
+
+
+    <button class="btn btn-primary btn-submit" id="submitBtn" onclick="handleSubmit()">登录</button>
+
+    <!-- 登录/注册切换 -->
+    <div class="toggle-btn" id="toggleText" onclick="toggleMode()">
+      还没有账号？立即注册
+    </div>
+  </div>
+
+  <script src="./js/errorAlert.js"></script>
+  <script src="./js/axios.min.js"></script>
+  <script src="./js/axiosInit.js"></script>
+  <script src="./js/xlogin.js"></script>
+</body>
+</html>

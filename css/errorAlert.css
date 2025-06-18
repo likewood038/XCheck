@@ -1,0 +1,93 @@
+/* 弹窗容器 */
+.error-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+/* 弹窗样式 */
+.alert-modal {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: auto;
+}
+
+/* 显示状态 */
+.alert-modal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 关闭中状态 */
+.alert-modal.closing {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease-out;
+}
+
+/* 关闭图标 */
+.close-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 4px;
+}
+
+.close-icon:hover {
+  opacity: 0.8;
+}
+
+/* 图标 */
+.alert-icon {
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+/* 消息文本 */
+.alert-message {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-right: 20px; /* 为关闭按钮留出空间 */
+}
+
+/* 移动端适配 */
+@media (max-width: 480px) {
+  .alert-modal {
+    max-width: 95%;
+    padding: 14px 16px;
+  }
+  
+  .alert-icon {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  .alert-message {
+    font-size: 13px;
+  }
+}
